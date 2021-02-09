@@ -30,24 +30,16 @@ $(call inherit-product-if-exists, vendor/apps/GooglePinYin/config.mk)
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
-# OTA
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    lineage.updater.uri=https://ota.sbwml.net/los18/sagit.json
-
-# Face Unlock (AOSP-11)
-PRODUCT_PACKAGES += \
-    FaceUnlockService
-PRODUCT_COPY_FILES += \
-    vendor/apps/FaceUnlock/prebuilt/product/etc/default-permissions/facesense-default-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/facesense-default-permissions.xml
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face.sense_service=true
-
 PRODUCT_NAME := lineage_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_FACE_UNLOCK := true
+
+# Sakura flags
+SAKURA_MAINTAINER := trisf
+TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
