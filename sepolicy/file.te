@@ -1,0 +1,2 @@
+# Smart charging
+type sysfs_smart_charging, fs_type, sysfs_type;
