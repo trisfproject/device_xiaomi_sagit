@@ -30,9 +30,6 @@ $(call inherit-product-if-exists, vendor/apps/GooglePinYin/config.mk)
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/apps/MiuiCamera/config.mk)
 
-# OTA
-$(call inherit-product-if-exists, vendor/apps/Updater/config.mk)
-
 PRODUCT_NAME := aosp_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
@@ -41,11 +38,18 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 TARGET_FACE_UNLOCK := true
 TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_BOOT_ANIMATION_RES := 1080
 
 KBUILD_BUILD_USER := trisf
 KBUILD_BUILD_HOST := xfi
 
+# Nezuko stuff
+CUSTOM_BUILD_TYPE := UNOFFICIAL
+NEZUKO_MAINTAINER := trisf
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.nezuko.cpu=SDM835
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
